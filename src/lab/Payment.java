@@ -8,6 +8,10 @@ public class Payment {
      */
     public static boolean canCharge(User u) {
         // TODO: เขียนแบบ guard clause (return เร็ว) แทน if ซ้อนหลายชั้น
-        return false;
+            if(u == null) return false;
+            if(u.active == false) return false;
+            if(u.balance <= 0) return false;
+        
+            return true;
     }
 }
